@@ -1,5 +1,6 @@
 const db = require('./scripts/connection.js');
 const promptUser = require('./scripts/prompt.js');
+const { viewDepartments } = require('./scripts/department.js');
 
 // Function to start application
 const startApp = async () => {
@@ -31,11 +32,15 @@ const startApp = async () => {
             break;
         case 'Exit':
             db.end();
-            break;
+            process.exit();
         default:
             console.log(`Invalid action: ${action}`);
             break;
     }
+
+    // Restart application
+    startApp();
+
 };
 
 startApp();

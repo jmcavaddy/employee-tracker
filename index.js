@@ -1,6 +1,8 @@
 const db = require('./scripts/connection.js');
 const promptUser = require('./scripts/prompt.js');
 const { viewDepartments } = require('./scripts/department.js');
+const { viewRoles } = require('./scripts/role.js');
+const { viewEmployees } = require('./scripts/employee.js');
 
 // Function to start application
 const startApp = async () => {

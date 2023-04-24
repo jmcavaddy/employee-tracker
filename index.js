@@ -1,6 +1,6 @@
 const db = require('./scripts/connection.js');
 const promptUser = require('./scripts/prompt.js');
-const { viewDepartments } = require('./scripts/department.js');
+const { viewDepartments, addDepartment } = require('./scripts/department.js');
 const { viewRoles } = require('./scripts/role.js');
 const { viewEmployees } = require('./scripts/employee.js');
 
@@ -39,10 +39,10 @@ const startApp = async () => {
             console.log(`Invalid action: ${action}`);
             break;
     }
-
-    // Restart application
-    startApp();
-
 };
+
+const restartApp = function () {
+    startApp()
+}
 
 startApp();
